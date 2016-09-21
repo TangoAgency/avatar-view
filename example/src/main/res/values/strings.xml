@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Avatar View example</string>
+    <string name="av_example">Avatar View example</string>
+    <string name="txt_avatars_no_image">Avatars with no image URL provided</string>
+    <string name="txt_avatars_image">Avatars with image URL provided</string>
+    <string name="btn_reload_image">Reload image</string>
+</resources>

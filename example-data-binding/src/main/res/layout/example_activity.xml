@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="agency.tango.android.avatarview.example.viewmodel.ExampleViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:background="@color/colorPrimary">
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/av_data_binding_example"
+                android:textColor="@android:color/white" />
+
+        </android.support.v7.widget.Toolbar>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/main_screen_background">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/screen_margin_default"
+                        android:text="@string/txt_avatars_no_image" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <agency.tango.android.avatarview.views.AvatarView
+                            android:id="@+id/avatar_no_image_small"
+                            android:layout_width="@dimen/av_small_width"
+                            android:layout_height="@dimen/av_small_height"
+                            android:layout_margin="@dimen/screen_margin_default"
+                            bind:av_border_color="@android:color/white"
+                            bind:av_border_width="3dp"
+                            bind:avatarUrl="@{viewModel.userWithNoImageSmall.avatarUrl}"
+                            bind:name="@{viewModel.userWithNoImageSmall.name}" />
+
+                        <agency.tango.android.avatarview.views.AvatarView
+                            android:id="@+id/avatar_no_image"
+                            android:layout_width="@dimen/av_default_width"
+                            android:layout_height="@dimen/av_default_height"
+                            android:layout_margin="@dimen/screen_margin_default"
+                            bind:avatarUrl="@{viewModel.userWithNoImage.avatarUrl}"
+                            bind:name="@{viewModel.userWithNoImage.name}" />
+
+                        <agency.tango.android.avatarview.views.AvatarView
+                            android:id="@+id/avatar_no_image_biggest"
+                            android:layout_width="@dimen/av_biggest_width"
+                            android:layout_height="@dimen/av_biggest_height"
+                            android:layout_margin="@dimen/screen_margin_default"
+                            bind:av_border_color="@android:color/white"
+                            bind:av_border_width="4dp"
+                            bind:av_text_size_percentage="70"
+                            bind:avatarUrl="@{viewModel.userWithNoImageBiggest.avatarUrl}"
+                            bind:name="@{viewModel.userWithNoImageBiggest.name}" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/screen_margin_default"
+                            android:text="@string/txt_avatars_image" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <agency.tango.android.avatarview.views.AvatarView
+                                android:id="@+id/avatar_image_small"
+                                android:layout_width="@dimen/av_small_width"
+                                android:layout_height="@dimen/av_small_height"
+                                android:layout_margin="@dimen/screen_margin_default"
+                                bind:avatarUrl="@{viewModel.userWithImageSmall.avatarUrl}"
+                                bind:name="@{viewModel.userWithImageSmall.name}" />
+
+                            <agency.tango.android.avatarview.views.AvatarView
+                                android:id="@+id/avatar_image"
+                                android:layout_width="@dimen/av_default_width"
+                                android:layout_height="@dimen/av_default_height"
+                                android:layout_margin="@dimen/screen_margin_default"
+                                bind:avatarUrl="@{viewModel.userWithImage.avatarUrl}"
+                                bind:name="@{viewModel.userWithImage.name}" />
+
+                            <agency.tango.android.avatarview.views.AvatarView
+                                android:id="@+id/avatar_image_biggest"
+                                android:layout_width="@dimen/av_biggest_width"
+                                android:layout_height="@dimen/av_biggest_height"
+                                android:layout_margin="@dimen/screen_margin_default"
+                                bind:av_border_color="@android:color/white"
+                                bind:av_border_width="6dp"
+                                bind:avatarUrl="@{viewModel.userWithImageBiggest.avatarUrl}"
+                                bind:name="@{viewModel.userWithImageBiggest.name}" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/screen_margin_default"
+                    android:orientation="horizontal">
+
+                    <agency.tango.android.avatarview.views.AvatarView
+                        android:id="@+id/refreshable_avatar"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_margin="@dimen/screen_margin_default"
+                        bind:av_border_color="@android:color/white"
+                        bind:av_border_width="2dp"
+                        bind:avatarUrl="@{viewModel.refreshableUser.avatarUrl}"
+                        bind:name="@{viewModel.refreshableUser.name}" />
+
+                    <Button
+                        android:id="@+id/btn_reload_image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:onClick="@{() -> viewModel.reloadImage()}"
+                        android:text="@string/btn_reload_image" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</layout>

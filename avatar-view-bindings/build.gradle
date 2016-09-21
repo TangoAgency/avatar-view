@@ -1,0 +1,50 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.novoda.bintray-release'
+
+apply from: "$rootDir/versions.gradle"
+android {
+    compileSdkVersion 24
+    buildToolsVersion "24.0.2"
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        debug {
+            defaultPublishConfig "debug"
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+
+    compile project(path: ':avatar-view')
+    compile 'com.android.databinding:baseLibrary:2.2.0-rc2'
+}
+
+publish {
+    userOrg = 'tangoagency'
+    groupId = 'agency.tango.android'
+    artifactId = 'avatar-view'
+    publishVersion = '0.0.1'
+    desc = ''
+    website = 'https://github.com/TangoAgency/avatar-view'
+}
