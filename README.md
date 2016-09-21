@@ -2,12 +2,12 @@
 [![Build Status](https://travis-ci.org/TangoAgency/avatar-view.svg?branch=master)](https://travis-ci.org/TangoAgency/avatar-view)
 
 Avatar View library was implemented based on Matt Precious's [Don’t Fear the Canvas][Matt Precious's Lecture] lecture. I decided
-to create this library in order to achieve an ImageView which can smoothly display user's profile image or his username/name initial letter(in case
+to create this library in order to achieve an ImageView which can smoothly display user's profile image or his username/name initial letter (in case
 when image was not provided).
 
 Please take a look at examples below:
 
-|[First Example][FirstExample]|[Second Example][SecondExample]|
+| ![FirstExample] | ![SecondExample] |
 
 ## Usage
 
@@ -17,7 +17,7 @@ This library can be used in two ways: using standard Android methods and using A
 
 #### Step 1
 
-Add gradle dependecy
+Add gradle dependency:
 ```
 
 dependencies {
@@ -27,7 +27,7 @@ dependencies {
 
 #### Step 2
 
-Add to your xml layout file
+Add to your xml layout file:
 ```
 
 <agency.tango.android.avatarview.views.AvatarView
@@ -42,7 +42,7 @@ Add to your xml layout file
 
 #### Step 3
 
-Add to your activity
+Add to your activity:
 ```
 
     AvatarView avatarView;
@@ -60,7 +60,7 @@ Add to your activity
 ```
 By default my library uses Picasso in order to correctly load image with placeholder. If you want to use
 a different library you have to create a loader which extends ImageLoaderBase class. Basically you have to
-override one method. Take a look how I do it in [PicassoLoader][PicassoLoader].
+override one method. Take a look how I have done it in [PicassoLoader][PicassoLoader].
 
 ###Data Binding:
 
