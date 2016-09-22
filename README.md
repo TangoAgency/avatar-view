@@ -8,7 +8,7 @@ when image was not provided).
 Please take a look at examples below:
 
 
-| Simple image refresh | [ExampleActivityNoBindings][ExampleActivityNoBindings]
+| Simple library presentation | [ExampleActivity][ExampleActivityNoBindings] & [BindingsExample][ExampleOnBindings]
 |:-:|:-:|
 | ![FirstExample] | ![SecondExample] |
 
@@ -106,7 +106,7 @@ public class ExampleViewModel extends BaseObservable {
 
     public ExampleViewModel() {
         testUser = new User("username", "avatarUrl");
-        notifyPropertyChanged(BR.refreshableUser);
+        notifyPropertyChanged(BR.testUser);
     }
 
     @Bindable
@@ -152,3 +152,4 @@ I have explained PicassoLoader issue in step 3 in Standard Method part
  [User]:<https://github.com/TangoAgency/avatar-view/blob/master/example-data-binding/src/main/java/agency/tango/android/avatarview/example/model/User.java>
  [AvatarViewBindings]:<https://github.com/TangoAgency/avatar-view/blob/master/avatar-view-bindings/src/main/java/agency/tango/android/avatarviewbindings/bindings/AvatarViewBindings.java>
  [ExampleActivityNoBindings]:<https://github.com/TangoAgency/avatar-view/blob/master/example/src/main/java/agency/tango/android/example/ExampleActivity.java>
+ [ExampleOnBindings]:<https://github.com/TangoAgency/avatar-view/blob/master/example-data-binding/src/main/java/agency/tango/android/avatarview/example/viewmodel/ExampleViewModel.java>
