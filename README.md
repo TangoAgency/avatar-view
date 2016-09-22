@@ -152,8 +152,8 @@ By default it is set to "?".
 
 
  [Matt Precious's Lecture]: <https://www.youtube.com/watch?v=KH8Ldp39TUk>
- [FirstExample]: <https://github.com/TangoAgency/avatar-view/blob/master/images/cena.gif>
- [SecondExample]: <https://github.com/TangoAgency/avatar-view/blob/master/images/example.gif>
+ [FirstExample]: <https://github.com/TangoAgency/avatar-view/blob/master/images/john_cena.gif>
+ [SecondExample]: <https://github.com/TangoAgency/avatar-view/blob/master/images/example_activity.gif>
  [PicassoLoader]: <https://github.com/TangoAgency/avatar-view/blob/master/avatar-view/src/main/java/agency/tango/android/avatarview/PicassoLoader.java>
  [ImageLoaderBase]: <https://github.com/TangoAgency/avatar-view/blob/master/avatar-view/src/main/java/agency/tango/android/avatarview/ImageLoaderBase.java>
  [User]:<https://github.com/TangoAgency/avatar-view/blob/master/example-data-binding/src/main/java/agency/tango/android/avatarview/example/model/User.java>
