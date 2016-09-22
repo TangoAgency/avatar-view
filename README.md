@@ -140,7 +140,13 @@ private class ExampleDataComponent implements android.databinding.DataBindingCom
 Take a look at [AvatarViewBindings][AvatarViewBindings] class where BindingsAdapter in configured. Because of that
 you can use "bind:avatarUrl" and "bind:name" in xml file.
 
-I have explained PicassoLoader issue in step 3 in Standard Method part
+I have explained [PicassoLoader][PicassoLoader] issue in step 3 in Standard Method part
+
+####Additional information
+
+- Avatar background color is calculated using hashCode() method called on given name String.
+- You can set defaultPlaceholderString by creating [ImageLoaderBase][ImageLoaderBase] instance (i.e. [PicassoLoader][PicassoLoader]) by calling constructor with String parameter.
+By default it is set to "?".
 
 ####Feel free to create issues and pull requests!
 
@@ -149,6 +155,7 @@ I have explained PicassoLoader issue in step 3 in Standard Method part
  [FirstExample]: <https://github.com/TangoAgency/avatar-view/blob/master/images/cena.gif>
  [SecondExample]: <https://github.com/TangoAgency/avatar-view/blob/master/images/example.gif>
  [PicassoLoader]: <https://github.com/TangoAgency/avatar-view/blob/master/avatar-view/src/main/java/agency/tango/android/avatarview/PicassoLoader.java>
+ [ImageLoaderBase]: <https://github.com/TangoAgency/avatar-view/blob/master/avatar-view/src/main/java/agency/tango/android/avatarview/ImageLoaderBase.java>
  [User]:<https://github.com/TangoAgency/avatar-view/blob/master/example-data-binding/src/main/java/agency/tango/android/avatarview/example/model/User.java>
  [AvatarViewBindings]:<https://github.com/TangoAgency/avatar-view/blob/master/avatar-view-bindings/src/main/java/agency/tango/android/avatarviewbindings/bindings/AvatarViewBindings.java>
  [ExampleActivityNoBindings]:<https://github.com/TangoAgency/avatar-view/blob/master/example/src/main/java/agency/tango/android/example/ExampleActivity.java>
