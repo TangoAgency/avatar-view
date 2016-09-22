@@ -24,6 +24,9 @@ Add gradle dependency:
 ```
 dependencies {
     compile 'agency.tango.android:avatar-view:{latest_release}'
+
+    //if you want to use Picasso for loading images
+    compile 'agency.tango.android:avatar-view-picasso:{latest_release}'
 }
 ```
 
@@ -58,9 +61,9 @@ Add to your activity:
         imageLoader.loadImage(avatarView, "avatarUrl", "name");
     }
 ```
-By default my library uses Picasso in order to correctly load image with placeholder. If you want to use
-a different library you have to create a loader which extends ImageLoaderBase class. Basically you have to
-override one method. Take a look how I have done it in [PicassoLoader][PicassoLoader].
+If you want to use a different library than Picasso for loading images you have to create a loader which
+extends ImageLoaderBase class. Basically you have to override one method. Take a look how I have done
+it in [PicassoLoader][PicassoLoader] available in avatar-view-picasso module.
 
 ###Data Binding:
 
@@ -71,6 +74,9 @@ Add gradle dependency:
 dependencies {
     compile 'agency.tango.android:avatar-view:{latest_release}'
     compile 'agency.tango.android:avatar-view-bindings:{latest_release}'
+
+    //if you want to use Picasso for loading images
+    compile 'agency.tango.android:avatar-view-picasso:{latest_release}'
 }
 ```
 
