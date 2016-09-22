@@ -97,7 +97,7 @@ I will show how to edit your xml file based on User class. Let's see:
 
 #### Step 3
 
-Your VieModel class has to contain [User][User] testUser field.
+Your VieModel class has to contain [User][User] testUser field. Let's see:
 
 ```java
 public class ExampleViewModel extends BaseObservable {
@@ -145,15 +145,17 @@ I have explained [PicassoLoader][PicassoLoader] issue in step 3 in Standard Meth
 ####Additional information
 
 - Avatar background color is calculated using hashCode() method called on given name String.
-- You can set defaultPlaceholderString by creating [ImageLoaderBase][ImageLoaderBase] instance (i.e. [PicassoLoader][PicassoLoader]) by calling constructor with String parameter.
-By default it is set to "?".
+- You can set "default placeholder String" by creating [ImageLoaderBase][ImageLoaderBase] instance (i.e. [PicassoLoader][PicassoLoader]) by calling constructor with String parameter.
+By default "default placeholder String" is set to "?".
+- Default border width is 2dp and default border color is white.
+- Placeholder letters are currently always white (in future user will be able to choose a different color).
 
 ####Feel free to create issues and pull requests!
 
 
  [Matt Precious's Lecture]: <https://www.youtube.com/watch?v=KH8Ldp39TUk>
- [FirstExample]: <https://github.com/TangoAgency/avatar-view/blob/master/images/john_cena.gif>
- [SecondExample]: <https://github.com/TangoAgency/avatar-view/blob/master/images/example_activity.gif>
+ [FirstExample]: <https://github.com/TangoAgency/avatar-view/blob/master/images/example1.gif>
+ [SecondExample]: <https://github.com/TangoAgency/avatar-view/blob/master/images/example2.gif>
  [PicassoLoader]: <https://github.com/TangoAgency/avatar-view/blob/master/avatar-view/src/main/java/agency/tango/android/avatarview/PicassoLoader.java>
  [ImageLoaderBase]: <https://github.com/TangoAgency/avatar-view/blob/master/avatar-view/src/main/java/agency/tango/android/avatarview/ImageLoaderBase.java>
  [User]:<https://github.com/TangoAgency/avatar-view/blob/master/example-data-binding/src/main/java/agency/tango/android/avatarview/example/model/User.java>

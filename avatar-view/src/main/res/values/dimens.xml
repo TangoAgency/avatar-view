@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="av_default_border_width">0dp</dimen>
+    <dimen name="av_default_border_width">2dp</dimen>
     <dimen name="av_default_height">75dp</dimen>
     <dimen name="av_default_width">75dp</dimen>
 </resources>
