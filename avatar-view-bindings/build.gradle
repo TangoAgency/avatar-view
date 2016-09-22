@@ -43,7 +43,7 @@ dependencies {
 publish {
     userOrg = 'tangoagency'
     groupId = 'agency.tango.android'
-    artifactId = 'avatar-view'
+    artifactId = 'avatar-view-bindings'
     publishVersion = '0.0.1'
     desc = ''
     website = 'https://github.com/TangoAgency/avatar-view'
