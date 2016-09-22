@@ -22,23 +22,19 @@ android {
     lintOptions {
         abortOnError false
     }
-
-    dataBinding {
-        enabled = true
-    }
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
+    compile 'com.squareup.picasso:picasso:2.5.2'
     compile project(path: ':avatar-view')
-    compile 'com.android.databinding:baseLibrary:2.2.0-rc2'
 }
 
 publish {
     userOrg = 'tangoagency'
     groupId = 'agency.tango.android'
-    artifactId = 'avatar-view-bindings'
+    artifactId = 'avatar-view-picasso'
     publishVersion = '0.0.1'
     desc = ''
     website = 'https://github.com/TangoAgency/avatar-view'

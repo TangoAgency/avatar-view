@@ -1,9 +1,12 @@
-package agency.tango.android.avatarview;
+package agency.tango.android.avatarviewpicasso;
+
 
 import android.support.annotation.NonNull;
 
 import com.squareup.picasso.Picasso;
 
+import agency.tango.android.avatarview.AvatarPlaceholder;
+import agency.tango.android.avatarview.ImageLoaderBase;
 import agency.tango.android.avatarview.views.AvatarView;
 
 public class PicassoLoader extends ImageLoaderBase {

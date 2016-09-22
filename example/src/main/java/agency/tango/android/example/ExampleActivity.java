@@ -7,9 +7,9 @@ import android.view.View;
 
 import java.util.Date;
 
+import agency.tango.android.avatarviewpicasso.PicassoLoader;
 import agency.tango.android.avatarview.AvatarPlaceholder;
 import agency.tango.android.avatarview.IImageLoader;
-import agency.tango.android.avatarview.PicassoLoader;
 import agency.tango.android.avatarview.views.AvatarView;
 
 public class ExampleActivity extends AppCompatActivity {
@@ -56,7 +56,7 @@ public class ExampleActivity extends AppCompatActivity {
 
     private void loadAvatarData() {
 
-        imageLoader = new PicassoLoader("?");
+        imageLoader = new PicassoLoader();
 
         imageLoader.loadImage(avatarWithNoImageSmall, (String) null, null);
         imageLoader.loadImage(avatarWithNoImage, null, "Jakub", 33);
