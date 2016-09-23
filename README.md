@@ -6,7 +6,7 @@ Avatar View library was implemented based on Matt Precious's [Don’t Fear the C
 to create this library in order to achieve an ImageView which can smoothly display user's profile image or his username/name initial letter (in case
 when image was not provided).
 
-Please take a look at examples below:
+Please take a look at the examples below:
 
 
 | Simple library presentation | [ExampleActivity][ExampleActivityNoBindings] & [BindingsExample][ExampleOnBindings]
@@ -159,7 +159,8 @@ I have explained [PicassoLoader][PicassoLoader] issue in [step 3][Step3A] in Sta
 hasn't been loaded yet. It is a letter on one-color background (just like in ex. Google, Youtube avatars).
 Default placeholder string (displayed when username is null or empty) is "?". TextSizePercentage value
 sets how big part of the view is taken by the text. Default textSizePercentage is 33. You can change
-those values by passing another ones in AvatarPlaceholder constructor.
+those values by passing another ones in AvatarPlaceholder constructor or not directly using IImageLoader
+class methods/constructors.
 
 ####Additional information
 
