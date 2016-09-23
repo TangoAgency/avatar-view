@@ -1,5 +1,5 @@
 # Avatar View
-[![Download](https://api.bintray.com/packages/tangoagency/maven/avatar-view/images/download.svg)
+[ ![Download](https://api.bintray.com/packages/tangoagency/maven/avatar-view/images/download.svg) ](https://bintray.com/tangoagency/maven/avatar-view/_latestVersion)
 [![Build Status](https://travis-ci.org/TangoAgency/avatar-view.svg?branch=master)](https://travis-ci.org/TangoAgency/avatar-view)
 
 Avatar View library was implemented based on Matt Precious's [Don’t Fear the Canvas][Matt Precious's Lecture] lecture. I decided
