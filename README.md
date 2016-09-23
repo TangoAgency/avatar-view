@@ -15,7 +15,7 @@ Please take a look at examples below:
 
 ## Usage
 
-This library can be used in two ways: using standard Android methods and using Android Data Binding.
+This library can be used in two ways: using [standard Android methods][StandardMethodsPart] and using [Android Data Binding][DataBindingPart].
 
 ###Standard:
 
@@ -59,12 +59,17 @@ Add to your activity:
         avatarView = (AvatarView) findViewById(R.id.avatar_view_example);
 
         imageLoader = new PicassoLoader();
-        imageLoader.loadImage(avatarView, "avatarUrl", "name");
+        imageLoader.loadImage(avatarView, "http:/example.com/user/someUserAvatar.png", "User Name");
     }
 ```
 If you want to use a different library than Picasso for loading images you have to create a loader which
-extends ImageLoaderBase class. Basically you have to override one method. Take a look how I have done
+extends [ImageLoaderBase][ImageLoaderBase] class. Basically you have to override one method. Take a look how I have done
 it in [PicassoLoader][PicassoLoader] available in avatar-view-picasso module.
+
+ImageLoaderBase has 2 constructors: one with no parameters, and second one where you can pass
+default string placeholder in order to change default "?". You can also set it directly in
+AvatarPlaceholder constructor. More info about AvatarPlaceholder [here][AvatarPlaceholderInfo].
+
 
 ###Data Binding:
 
@@ -98,6 +103,7 @@ I will show how to edit your xml file based on User class. Let's see:
     android:layout_height="100dp"
     bind:av_border_color="@android:color/white"
     bind:av_border_width="6dp"
+    bind:av_text_size_percentage="40"
     bind:avatarUrl="@{viewModel.testUser.avatarUrl}"
     bind:name="@{viewModel.testUser.name}" />
 ```
@@ -110,15 +116,9 @@ Your VieModel class has to contain [User][User] testUser field. Let's see:
 public class ExampleViewModel extends BaseObservable {
 
     public User testUser;
-
+    
     public ExampleViewModel() {
-        testUser = new User("username", "avatarUrl");
-        notifyPropertyChanged(BR.testUser);
-    }
-
-    @Bindable
-    public User getTestUser() {
-        return testUser;
+        testUser = new User("User Name", "http:/example.com/user/someUserAvatar.png");
     }
 }
 ```
@@ -138,27 +138,39 @@ protected void onCreate(@Nullable Bundle savedInstanceState) {
     binding.setViewModel(new ExampleViewModel());
 }
 
-private class ExampleDataComponent implements android.databinding.DataBindingComponent {
+private class ExampleDataComponent implements DataBindingComponent {
     public AvatarViewBindings getAvatarViewBindings() {
         return new AvatarViewBindings(new PicassoLoader());
     }
 }
 ```
-Take a look at [AvatarViewBindings][AvatarViewBindings] class where BindingsAdapter in configured. Because of that
-you can use "bind:avatarUrl" and "bind:name" in xml file.
+Take a look at [AvatarViewBindings][AvatarViewBindings] class where BindingsAdapter is configured
+("bind:avatarUrl" and "bind:name" for usage in xml). In order to correctly use AvatarViewBindings
+you have to create class extending DataBindingComponent and pass it as a third parameter in
+DataBindingUtil.setContentView() method. This is obligatory because AvatarViewBindings takes an
+[IImageLoader][IImageLoader] parameter in it's constructor. More information about this topic you can
+find [here][DataBindingPresentation].
 
-I have explained [PicassoLoader][PicassoLoader] issue in step 3 in Standard Method part
+I have explained [PicassoLoader][PicassoLoader] issue in [step 3][Step3A] in Standard Method part
+
+####AvatarPlaceholder
+
+[AvatarPlaceholder][AvatarPlaceholder] is a Drawable which is set as a AvatarView background when image
+hasn't been loaded yet. It is a letter on one-color background (just like in f.e. Google, Youtube avatars).
+Default placeholder string (displayed when username is null or empty) is "?". You can change it by passing
+other String in AvatarPlaceholder constructor.
+
+
 
 ####Additional information
 
 - Avatar background color is calculated using hashCode() method called on given name String.
-- You can set "default placeholder String" by creating [ImageLoaderBase][ImageLoaderBase] instance (i.e. [PicassoLoader][PicassoLoader]) by calling constructor with String parameter.
-By default "default placeholder String" is set to "?".
+- You can set default placeholder String by creating [ImageLoaderBase][ImageLoaderBase] instance (i.e. [PicassoLoader][PicassoLoader]) by
+calling constructor with String parameter. Default placeholder String is set to "?".
 - Default border width is 2dp and default border color is white.
 - Placeholder letters are currently always white (in future user will be able to choose a different color).
 
 ####Feel free to create issues and pull requests!
-
 
  [Matt Precious's Lecture]: <https://www.youtube.com/watch?v=KH8Ldp39TUk>
  [FirstExample]: <https://github.com/TangoAgency/avatar-view/blob/master/images/example1.gif>
@@ -169,3 +181,10 @@ By default "default placeholder String" is set to "?".
  [AvatarViewBindings]:<https://github.com/TangoAgency/avatar-view/blob/master/avatar-view-bindings/src/main/java/agency/tango/android/avatarviewbindings/bindings/AvatarViewBindings.java>
  [ExampleActivityNoBindings]:<https://github.com/TangoAgency/avatar-view/blob/master/example/src/main/java/agency/tango/android/example/ExampleActivity.java>
  [ExampleOnBindings]:<https://github.com/TangoAgency/avatar-view/blob/master/example-data-binding/src/main/java/agency/tango/android/avatarview/example/viewmodel/ExampleViewModel.java>
+ [Step3A]:<https://github.com/TangoAgency/avatar-view#step-3>
+ [DataBindingPart]:<https://github.com/TangoAgency/avatar-view#data-binding>
+ [StandardMethodsPart]:<https://github.com/TangoAgency/avatar-view#standard>
+ [DataBindingPresentation]:<http://www.slideshare.net/radekpiekarz/deep-dive-into-android-data-binding>
+ [IImageLoader]:<https://github.com/TangoAgency/avatar-view/blob/master/avatar-view/src/main/java/agency/tango/android/avatarview/IImageLoader.java>
+ [AvatarPlaceholder]:<https://github.com/TangoAgency/avatar-view/blob/master/avatar-view/src/main/java/agency/tango/android/avatarview/AvatarPlaceholder.java>
+ [AvatarPlaceholderInfo]:<https://github.com/TangoAgency/avatar-view#avatar-placeholder>

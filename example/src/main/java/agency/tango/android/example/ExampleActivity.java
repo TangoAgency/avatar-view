@@ -7,9 +7,9 @@ import android.view.View;
 
 import java.util.Date;
 
-import agency.tango.android.avatarviewpicasso.PicassoLoader;
 import agency.tango.android.avatarview.AvatarPlaceholder;
 import agency.tango.android.avatarview.IImageLoader;
+import agency.tango.android.avatarview.loader.PicassoLoader;
 import agency.tango.android.avatarview.views.AvatarView;
 
 public class ExampleActivity extends AppCompatActivity {
