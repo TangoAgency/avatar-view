@@ -37,7 +37,6 @@ Add to your xml layout file:
 
 ```xml
 <agency.tango.android.avatarview.views.AvatarView
-    android:id="@+id/avatar_view_example"
     android:layout_width="100dp"
     android:layout_height="100dp"
     app:av_border_color="@android:color/white"
@@ -93,37 +92,21 @@ I will show how to edit your xml file based on User class. Let's see:
 ```xml
 <data>
     <variable
-        name="viewModel"
-        type="YourViewModelClass" />
+        name="user"
+        type="User" />
 </data>
 
 <agency.tango.android.avatarview.views.AvatarView
-    android:id="@+id/avatar_view_example"
     android:layout_width="100dp"
     android:layout_height="100dp"
     bind:av_border_color="@android:color/white"
     bind:av_border_width="6dp"
     bind:av_text_size_percentage="40"
-    bind:avatarUrl="@{viewModel.testUser.avatarUrl}"
-    bind:name="@{viewModel.testUser.name}" />
+    bind:avatarUrl="@{user.avatarUrl}"
+    bind:name="@{user.name}" />
 ```
 
 #### Step 3
-
-Your VieModel class has to contain [User][User] testUser field. Let's see:
-
-```java
-public class ExampleViewModel extends BaseObservable {
-
-    public User testUser;
-    
-    public ExampleViewModel() {
-        testUser = new User("User Name", "http:/example.com/user/someUserAvatar.png");
-    }
-}
-```
-
-#### Step 4
 
 Add to your activity:
 
@@ -135,7 +118,7 @@ protected void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
 
     binding = DataBindingUtil.setContentView(this, R.layout.example_activity, new ExampleDataComponent());
-    binding.setViewModel(new ExampleViewModel());
+    binding.setUser(new User("User Name", "http:/example.com/user/someUserAvatar.png"));
 }
 
 private class ExampleDataComponent implements DataBindingComponent {
@@ -149,7 +132,8 @@ Take a look at [AvatarViewBindings][AvatarViewBindings] class where BindingsAdap
 you have to create class extending DataBindingComponent and pass it as a third parameter in
 DataBindingUtil.setContentView() method. This is obligatory because AvatarViewBindings takes an
 [IImageLoader][IImageLoader] parameter in it's constructor. You can find more information about
-this topic [here][DataBindingPresentation].
+this topic in <a href="http://www.slideshare.net/radekpiekarz/deep-dive-into-android-data-binding">Deep dive
+into Android Data Binding</a> talk.
 
 I have explained [PicassoLoader][PicassoLoader] issue in [step 3][Step3A] in Standard Method part.
 
@@ -167,7 +151,7 @@ class methods/constructors.
 - Avatar background color is calculated using hashCode() method called on a given name string.
 - Default border width is 2dp and default border color is white.
 - Placeholder letters are currently always white (in future user will be able to choose a different color).
-- It is recommended to set your default placeholder string as short as possible (the best would be 1 letter)
+- It is recommended to set your default placeholder string as short as possible (the best would be one letter).
 
 ####Feel free to create issues and pull requests!
 
