@@ -148,25 +148,22 @@ Take a look at [AvatarViewBindings][AvatarViewBindings] class where BindingsAdap
 ("bind:avatarUrl" and "bind:name" for usage in xml). In order to correctly use AvatarViewBindings
 you have to create class extending DataBindingComponent and pass it as a third parameter in
 DataBindingUtil.setContentView() method. This is obligatory because AvatarViewBindings takes an
-[IImageLoader][IImageLoader] parameter in it's constructor. More information about this topic you can
-find [here][DataBindingPresentation].
+[IImageLoader][IImageLoader] parameter in it's constructor. You can find more information about
+this topic [here][DataBindingPresentation].
 
-I have explained [PicassoLoader][PicassoLoader] issue in [step 3][Step3A] in Standard Method part
+I have explained [PicassoLoader][PicassoLoader] issue in [step 3][Step3A] in Standard Method part.
 
 ####AvatarPlaceholder
 
 [AvatarPlaceholder][AvatarPlaceholder] is a Drawable which is set as a AvatarView background when image
-hasn't been loaded yet. It is a letter on one-color background (just like in f.e. Google, Youtube avatars).
-Default placeholder string (displayed when username is null or empty) is "?". You can change it by passing
-other String in AvatarPlaceholder constructor.
-
-
+hasn't been loaded yet. It is a letter on one-color background (just like in ex. Google, Youtube avatars).
+Default placeholder string (displayed when username is null or empty) is "?". TextSizePercentage value
+sets how big part of the view is taken by the text. Default textSizePercentage is 33. You can change
+those values by passing another ones in AvatarPlaceholder constructor.
 
 ####Additional information
 
-- Avatar background color is calculated using hashCode() method called on given name String.
-- You can set default placeholder String by creating [ImageLoaderBase][ImageLoaderBase] instance (i.e. [PicassoLoader][PicassoLoader]) by
-calling constructor with String parameter. Default placeholder String is set to "?".
+- Avatar background color is calculated using hashCode() method called on a given name string.
 - Default border width is 2dp and default border color is white.
 - Placeholder letters are currently always white (in future user will be able to choose a different color).
 
@@ -175,7 +172,7 @@ calling constructor with String parameter. Default placeholder String is set to 
  [Matt Precious's Lecture]: <https://www.youtube.com/watch?v=KH8Ldp39TUk>
  [FirstExample]: <https://github.com/TangoAgency/avatar-view/blob/master/images/example1.gif>
  [SecondExample]: <https://github.com/TangoAgency/avatar-view/blob/master/images/example2.gif>
- [PicassoLoader]: <https://github.com/TangoAgency/avatar-view/blob/master/avatar-view/src/main/java/agency/tango/android/avatarview/PicassoLoader.java>
+ [PicassoLoader]: <https://github.com/TangoAgency/avatar-view/blob/master/avatar-view-picasso/src/main/java/agency/tango/android/avatarview/loader/PicassoLoader.java>
  [ImageLoaderBase]: <https://github.com/TangoAgency/avatar-view/blob/master/avatar-view/src/main/java/agency/tango/android/avatarview/ImageLoaderBase.java>
  [User]:<https://github.com/TangoAgency/avatar-view/blob/master/example-data-binding/src/main/java/agency/tango/android/avatarview/example/model/User.java>
  [AvatarViewBindings]:<https://github.com/TangoAgency/avatar-view/blob/master/avatar-view-bindings/src/main/java/agency/tango/android/avatarviewbindings/bindings/AvatarViewBindings.java>
