@@ -66,8 +66,8 @@ If you want to use a different library than Picasso for loading images you have 
 extends [ImageLoaderBase][ImageLoaderBase] class. Basically you have to override one method. Take a look how I have done
 it in [PicassoLoader][PicassoLoader] available in avatar-view-picasso module.
 
-ImageLoaderBase has 2 constructors: one with no parameters, and second one where you can pass
-default string placeholder in order to change default "?". You can also set it directly in
+ImageLoaderBase has two constructors: one with no parameters, and second one where you can pass
+string placeholder in order to change default "?". You can also set it directly in
 AvatarPlaceholder constructor. More info about AvatarPlaceholder [here][AvatarPlaceholderInfo].
 
 
@@ -167,6 +167,7 @@ class methods/constructors.
 - Avatar background color is calculated using hashCode() method called on a given name string.
 - Default border width is 2dp and default border color is white.
 - Placeholder letters are currently always white (in future user will be able to choose a different color).
+- It is recommended to set your default placeholder string as short as possible (the best would be 1 letter)
 
 ####Feel free to create issues and pull requests!
 
