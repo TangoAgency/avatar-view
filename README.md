@@ -22,7 +22,7 @@ This library can be used in two ways: using [standard Android methods][StandardM
 #### Step 1
 
 Add gradle dependency:
-```
+```groovy
 dependencies {
     compile 'agency.tango.android:avatar-view:{latest_release}'
 
@@ -61,13 +61,13 @@ Add to your activity:
         imageLoader.loadImage(avatarView, "http:/example.com/user/someUserAvatar.png", "User Name");
     }
 ```
-If you want to use a different library than Picasso for loading images you have to create a loader which
+If you want to use a different library than ```Picasso``` for loading images you have to create a loader which
 extends [ImageLoaderBase][ImageLoaderBase] class. Basically you have to override one method. Take a look how I have done
 it in [PicassoLoader][PicassoLoader] available in avatar-view-picasso module.
 
-ImageLoaderBase has two constructors: one with no parameters, and second one where you can pass
+```ImageLoaderBase``` has two constructors: one with no parameters, and second one where you can pass
 string placeholder in order to change default "?". You can also set it directly in
-AvatarPlaceholder constructor. More info about AvatarPlaceholder [here][AvatarPlaceholderInfo].
+```AvatarPlaceholder``` constructor. More info about ```AvatarPlaceholder``` [here][AvatarPlaceholderInfo].
 
 
 ###Data Binding:
@@ -75,7 +75,7 @@ AvatarPlaceholder constructor. More info about AvatarPlaceholder [here][AvatarPl
 #### Step 1
 
 Add gradle dependency:
-```
+```groovy
 dependencies {
     compile 'agency.tango.android:avatar-view:{latest_release}'
     compile 'agency.tango.android:avatar-view-bindings:{latest_release}'
@@ -87,7 +87,7 @@ dependencies {
 
 #### Step 2
 
-I will show how to edit your xml file based on User class. Let's see:
+I will show how to edit your xml file based on ```User``` class. Let's see:
 
 ```xml
 <data>
@@ -127,10 +127,10 @@ private class ExampleDataComponent implements DataBindingComponent {
     }
 }
 ```
-Take a look at [AvatarViewBindings][AvatarViewBindings] class where BindingsAdapter is configured
-("bind:avatarUrl" and "bind:name" for usage in xml). In order to correctly use AvatarViewBindings
-you have to create class extending DataBindingComponent and pass it as a third parameter in
-DataBindingUtil.setContentView() method. This is obligatory because AvatarViewBindings takes an
+Take a look at [AvatarViewBindings][AvatarViewBindings] class where ```BindingsAdapter``` is configured
+(```bind:avatarUrl``` and ```bind:name``` for usage in xml). In order to correctly use ```AvatarViewBindings```
+you have to create class extending ```DataBindingComponent``` and pass it as a third parameter in
+```DataBindingUtil.setContentView()``` method. This is obligatory because ```AvatarViewBindings``` takes an
 [IImageLoader][IImageLoader] parameter in it's constructor. You can find more information about
 this topic in <a href="http://www.slideshare.net/radekpiekarz/deep-dive-into-android-data-binding">Deep dive
 into Android Data Binding</a> talk.
@@ -139,17 +139,17 @@ I have explained [PicassoLoader][PicassoLoader] issue in [step 3][Step3A] in Sta
 
 ####AvatarPlaceholder
 
-[AvatarPlaceholder][AvatarPlaceholder] is a Drawable which is set as a AvatarView background when image
+[AvatarPlaceholder][AvatarPlaceholder] is a ```Drawable``` which is set as a ```AvatarView``` background when image
 hasn't been loaded yet. It is a letter on one-color background (just like in ex. Google, Youtube avatars).
-Default placeholder string (displayed when username is null or empty) is "?". TextSizePercentage value
-sets how big part of the view is taken by the text. Default textSizePercentage is 33. You can change
-those values by passing another ones in AvatarPlaceholder constructor or not directly using IImageLoader
+Default placeholder string (displayed when username is ```null``` or empty) is "?". TextSizePercentage value
+sets how big part of the view is taken by the text. Default textSizePercentage is ```33```. You can change
+those values by passing another ones in ```AvatarPlaceholder``` constructor or not directly using IImageLoader
 class methods/constructors.
 
 ####Additional information
 
-- Avatar background color is calculated using hashCode() method called on a given name string.
-- Default border width is 2dp and default border color is white.
+- Avatar background color is calculated using ```hashCode()``` method called on a given name string.
+- Default border width is ```2dp``` and default border color is ```white```.
 - Placeholder letters are currently always white (in future user will be able to choose a different color).
 - It is recommended to set your default placeholder string as short as possible (the best would be one letter).
 
