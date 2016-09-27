@@ -66,7 +66,7 @@ extends [ImageLoaderBase][ImageLoaderBase] class. Basically you have to override
 it in [PicassoLoader][PicassoLoader] available in avatar-view-picasso module.
 
 ```ImageLoaderBase``` has two constructors: one with no parameters, and second one where you can pass
-string placeholder in order to change default "?". You can also set it directly in
+```String``` placeholder in order to change default "-". You can also set it directly in
 ```AvatarPlaceholder``` constructor. More info about ```AvatarPlaceholder``` [here][AvatarPlaceholderInfo].
 
 
@@ -141,17 +141,17 @@ I have explained [PicassoLoader][PicassoLoader] issue in [step 3][Step3A] in Sta
 
 [AvatarPlaceholder][AvatarPlaceholder] is a ```Drawable``` which is set as a ```AvatarView``` background when image
 hasn't been loaded yet. It is a letter on one-color background (just like in ex. Google, Youtube avatars).
-Default placeholder string (displayed when username is ```null``` or empty) is "?". TextSizePercentage value
+Default placeholder ```String``` (displayed when username is ```null``` or empty) is "-". TextSizePercentage value
 sets how big part of the view is taken by the text. Default textSizePercentage is ```33```. You can change
 those values by passing another ones in ```AvatarPlaceholder``` constructor or not directly using IImageLoader
 class methods/constructors.
 
 ####Additional information
 
-- Avatar background color is calculated using ```hashCode()``` method called on a given name string.
+- Avatar background color is calculated using ```hashCode()``` method called on a given name ```String```.
 - Default border width is ```2dp``` and default border color is ```white```.
 - Placeholder letters are currently always white (in future user will be able to choose a different color).
-- It is recommended to set your default placeholder string as short as possible (the best would be one letter).
+- It is recommended to set your default placeholder ```String``` as short as possible (the best would be one letter).
 
 ####Feel free to create issues and pull requests!
 
