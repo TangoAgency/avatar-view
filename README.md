@@ -3,8 +3,8 @@
 [![Build Status](https://travis-ci.org/TangoAgency/avatar-view.svg?branch=master)](https://travis-ci.org/TangoAgency/avatar-view)
 
 Avatar View library was implemented based on Matt Precious's [Don’t Fear the Canvas][Matt Precious's Lecture] lecture. I decided
-to create this library in order to achieve an ImageView which can smoothly display user's profile image or his username/name initial letter (in case
-when image was not provided).
+to create this library in order to achieve an ImageView which can smoothly display user's profile image or his username/name initial
+letter (in the case when the image was not provided).
 
 Please take a look at the examples below:
 
@@ -62,11 +62,11 @@ Add to your activity:
     }
 ```
 If you want to use a different library than ```Picasso``` for loading images you have to create a loader which
-extends [ImageLoaderBase][ImageLoaderBase] class. Basically you have to override one method. Take a look how I have done
-it in [PicassoLoader][PicassoLoader] available in avatar-view-picasso module.
+extends [ImageLoaderBase][ImageLoaderBase] class. Basically, you have to override one method. Take a look how I have done
+it in [PicassoLoader][PicassoLoader] available in the avatar-view-picasso module.
 
-```ImageLoaderBase``` has two constructors: one with no parameters, and second one where you can pass
-```String``` placeholder in order to change default "-". You can also set it directly in
+```ImageLoaderBase``` has two constructors: one with no parameters and second one where you can pass
+```String``` placeholder in order to change the default "-". You can also set it directly in
 ```AvatarPlaceholder``` constructor. More info about ```AvatarPlaceholder``` [here][AvatarPlaceholderInfo].
 
 
@@ -128,7 +128,7 @@ private class ExampleDataComponent implements DataBindingComponent {
 }
 ```
 Take a look at [AvatarViewBindings][AvatarViewBindings] class where ```BindingsAdapter``` is configured
-(```bind:avatarUrl``` and ```bind:name``` for usage in xml). In order to correctly use ```AvatarViewBindings```
+(```bind:avatarUrl``` and ```bind:name``` for usage in XML). In order to correctly use ```AvatarViewBindings```
 you have to create class extending ```DataBindingComponent``` and pass it as a third parameter in
 ```DataBindingUtil.setContentView()``` method. This is obligatory because ```AvatarViewBindings``` takes an
 [IImageLoader][IImageLoader] parameter in it's constructor. You can find more information about
@@ -139,11 +139,11 @@ I have explained [PicassoLoader][PicassoLoader] issue in [step 3][Step3A] in Sta
 
 ####AvatarPlaceholder
 
-[AvatarPlaceholder][AvatarPlaceholder] is a ```Drawable``` which is set as a ```AvatarView``` background when image
-hasn't been loaded yet. It is a letter on one-color background (just like in ex. Google, Youtube avatars).
-Default placeholder ```String``` (displayed when username is ```null``` or empty) is "-". TextSizePercentage value
+[AvatarPlaceholder][AvatarPlaceholder] is a ```Drawable``` which is set as a ```AvatarView``` background when the image
+hasn't been loaded yet. It is a letter on a one-color background (just like in ex. Google, Youtube avatars).
+Default placeholder ```String``` (displayed when the username is ```null``` or empty) is "-". TextSizePercentage value
 sets how big part of the view is taken by the text. Default textSizePercentage is ```33```. You can change
-those values by passing another ones in ```AvatarPlaceholder``` constructor or not directly using IImageLoader
+those values by passing another ones in ```AvatarPlaceholder``` constructor or not directly by using IImageLoader
 class methods/constructors.
 
 ####Additional information
