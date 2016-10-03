@@ -1,6 +1,7 @@
 # Avatar View
-[ ![Download](https://api.bintray.com/packages/tangoagency/maven/avatar-view/images/download.svg) ](https://bintray.com/tangoagency/maven/avatar-view/_latestVersion)
+[![Download](https://api.bintray.com/packages/tangoagency/maven/avatar-view/images/download.svg) ](https://bintray.com/tangoagency/maven/avatar-view/_latestVersion)
 [![Build Status](https://travis-ci.org/TangoAgency/avatar-view.svg?branch=master)](https://travis-ci.org/TangoAgency/avatar-view)
+[![Android Arsenal Avatar View](https://img.shields.io/badge/Android%20Arsenal-avatar--view-green.svg?style=true)](https://android-arsenal.com/details/1/4427)
 
 Avatar View library was implemented based on Matt Precious's [Don’t Fear the Canvas][Matt Precious's Lecture] lecture. I decided
 to create this library in order to achieve an ImageView which can smoothly display user's profile image or his username/name initial
