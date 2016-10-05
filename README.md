@@ -122,7 +122,7 @@ protected void onCreate(@Nullable Bundle savedInstanceState) {
     binding.setUser(new User("User Name", "http:/example.com/user/someUserAvatar.png"));
 }
 
-private class ExampleDataComponent implements DataBindingComponent {
+private static class ExampleDataComponent implements DataBindingComponent {
     public AvatarViewBindings getAvatarViewBindings() {
         return new AvatarViewBindings(new PicassoLoader());
     }
