@@ -1,6 +1,11 @@
 language: android
+
+jdk:
+- oraclejdk8
+
 android:
   components:
+  - tools
   - tools
   - platform-tools
   - build-tools-24.0.2
@@ -8,8 +13,24 @@ android:
   - extra-google-google_play_services
   - extra-google-m2repository
   - extra-android-m2repository
-jdk:
-- oraclejdk8
+
+licenses:
+  - '.+'
+
+before_cache:
+  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+
+cache:
+  directories:
+    - $HOME/.m2
+    - $HOME/.gradle
+
+before_install:
+  - mkdir "$ANDROID_HOME/licenses" || true
+  - echo -e "\n8933bad161af4178b1185d1a37fbf41ea5269c55" > "$ANDROID_HOME/licenses/android-sdk-license"
+  - echo -e "\n84831b9409646a918e30573bab4c9c91346d8abd" > "$ANDROID_HOME/licenses/android-sdk-preview-license"
+
 notifications:
   slack:
     secure: SoUAeXmMFqatVtlMZTnBNIgCmWiGLbJ7syhQkmfwDML4bz6HuaThFN0F10VM+Cw8P5/QbLP4x5Vtw09bOYM0M9//S2y765uzyItfFadP80Ju9Izd3E2X0PajumlzR+7J/oXonRW66zxDapqWH4DQqX3x4mo/3gOADotFDz2zUh8uAUkqc6b4t6zThFhiFhedC3EoITMNLWlMjMnDU3vA+Z28Yi0xGSGbk4a83B6oQc5R1K3hqFESrQREJdQycwxcrvGhMf//76H7sXZ3fajSIZkFgXsUnlDArJtoTIPITWwF2/NaLveb9UYmxy3XsGOmQ/czr77XtQiAJAUZlodqXPXYkTYHZMFDIG2gee6XBK7asCHrpgbFlQuQbgjcZu+dpRLe1oF8Qo61YNAONwxHFZkxoCxEJ4M8xpRRwIR2YHhW4bIjbow1wTFEItQBeppwr1D2/M7itje7fp3WregsYNPSP/wTi5a/VaoIN2nNKqSSZ+0xEzezdDoF9Nsts3OH6VajTi+slvHGUUr5f2mJdXc0AwWtXODgNJmAFDO1wwpPHsbx8COSMDciyU2nm4JJGD7p1wspl3eTaTe9G0Yznz1eDLbS78B+Y4ZvobXfFQUveCI2VztysCrD9GYugFobfUvCRiYklegqb/TwJTiw98PLiU2mpNdlsKGpiLRqYPc=
