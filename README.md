@@ -29,6 +29,8 @@ dependencies {
 
     //if you want to use Picasso for loading images
     compile 'agency.tango.android:avatar-view-picasso:{latest_release}'
+    //if you want to use Glide for loading images
+    compile 'agency.tango.android:avatar-view-glide:{latest_release}'
 }
 ```
 
