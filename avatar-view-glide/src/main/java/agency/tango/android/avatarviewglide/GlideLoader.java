@@ -8,9 +8,7 @@ import agency.tango.android.avatarview.AvatarPlaceholder;
 import agency.tango.android.avatarview.ImageLoaderBase;
 import agency.tango.android.avatarview.views.AvatarView;
 
-/**
- * Created by Wade Morris on 2016/10/19.
- */
+
 public class GlideLoader extends ImageLoaderBase {
 
     public GlideLoader() {
