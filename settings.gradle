@@ -1,1 +1,1 @@
-include ':example-data-binding', ':avatar-view', ':avatar-view-bindings', ':example', ':avatar-view-picasso'
+include ':example-data-binding', ':avatar-view', ':avatar-view-bindings', ':example', ':avatar-view-picasso', ':avatar-view-glide'

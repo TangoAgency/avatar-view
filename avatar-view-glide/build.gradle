@@ -1,29 +1,31 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 
+apply from: "$rootDir/versions.gradle"
 android {
     compileSdkVersion 24
     buildToolsVersion "24.0.2"
 
     defaultConfig {
-        applicationId "agency.tango.android.example"
         minSdkVersion 15
         targetSdkVersion 24
         versionCode 1
         versionName "1.0"
-
     }
+
     buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        debug {
+            defaultPublishConfig "debug"
         }
+    }
+
+    lintOptions {
+        abortOnError false
     }
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
+    compile 'com.github.bumptech.glide:glide:3.7.0'
     compile project(path: ':avatar-view')
-    compile project(path: ':avatar-view-picasso')
-    compile project(path: ':avatar-view-glide')
 }

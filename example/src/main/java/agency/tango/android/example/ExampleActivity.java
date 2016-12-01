@@ -11,6 +11,7 @@ import agency.tango.android.avatarview.AvatarPlaceholder;
 import agency.tango.android.avatarview.IImageLoader;
 import agency.tango.android.avatarview.loader.PicassoLoader;
 import agency.tango.android.avatarview.views.AvatarView;
+import agency.tango.android.avatarviewglide.GlideLoader;
 
 public class ExampleActivity extends AppCompatActivity {
 
@@ -69,6 +70,13 @@ public class ExampleActivity extends AppCompatActivity {
     }
 
     public void reloadImage(View v) {
+        imageLoader = new PicassoLoader();
         imageLoader.loadImage(refreshableAvatar, refreshableAvatarPlaceholder, String.format("%s?%s", LINDA_IMAGE, new Date().getTime()));      //new Date() added in order to block Picasso caching
     }
+
+    public void reloadImageWithGlide(View v) {
+        imageLoader = new GlideLoader();
+        imageLoader.loadImage(refreshableAvatar, refreshableAvatarPlaceholder, String.format("%s?%s", LINDA_IMAGE, new Date().getTime()));
+    }
+
 }
