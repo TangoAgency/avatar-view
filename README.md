@@ -18,7 +18,7 @@ Please take a look at the examples below:
 
 This library can be used in two ways: using [standard Android methods][StandardMethodsPart] and using [Android Data Binding][DataBindingPart].
 
-###Standard:
+### Standard:
 
 #### Step 1
 
@@ -74,7 +74,7 @@ it in [PicassoLoader][PicassoLoader] available in the avatar-view-picasso module
 ```AvatarPlaceholder``` constructor. More info about ```AvatarPlaceholder``` [here][AvatarPlaceholderInfo].
 
 
-###Data Binding:
+### Data Binding:
 
 #### Step 1
 
@@ -144,7 +144,7 @@ into Android Data Binding</a> talk.
 
 I have explained [PicassoLoader][PicassoLoader] issue in [step 3][Step3A] in Standard Method part.
 
-####AvatarPlaceholder
+#### AvatarPlaceholder
 
 [AvatarPlaceholder][AvatarPlaceholder] is a ```Drawable``` which is set as a ```AvatarView``` background when the image
 hasn't been loaded yet. It is a letter on a one-color background (just like in ex. Google, Youtube avatars).
@@ -153,7 +153,7 @@ sets how big part of the view is taken by the text. Default textSizePercentage i
 those values by passing another ones in ```AvatarPlaceholder``` constructor or not directly by using IImageLoader
 class methods/constructors.
 
-####Additional information
+#### Additional information
 
 - Avatar background color is calculated using ```hashCode()``` method called on a given name ```String```.
 - Default border width is ```2dp``` and default border color is ```white```.
