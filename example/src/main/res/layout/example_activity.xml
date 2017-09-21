@@ -51,23 +51,26 @@
                         android:layout_width="@dimen/av_small_width"
                         android:layout_height="@dimen/av_small_height"
                         android:layout_margin="@dimen/screen_margin_default"
-                        app:av_border_color="@android:color/white"
+                        app:av_background_color="#00f0ff"
                         app:av_border_width="3dp" />
 
                     <agency.tango.android.avatarview.views.AvatarView
                         android:id="@+id/avatar_no_image"
                         android:layout_width="@dimen/av_default_width"
                         android:layout_height="@dimen/av_default_height"
-                        android:layout_margin="@dimen/screen_margin_default" />
+                        android:layout_margin="@dimen/screen_margin_default"
+                        app:av_border_color="#ff0000"
+                        app:av_background_color="#c3ae0d"
+                        app:av_border_width="4dp"
+                        app:av_text_size_percentage="70"/>
 
                     <agency.tango.android.avatarview.views.AvatarView
                         android:id="@+id/avatar_no_image_biggest"
                         android:layout_width="@dimen/av_biggest_width"
                         android:layout_height="@dimen/av_biggest_height"
                         android:layout_margin="@dimen/screen_margin_default"
-                        app:av_border_color="@android:color/white"
                         app:av_border_width="4dp"
-                        app:av_text_size_percentage="70" />
+                        app:av_text_size_percentage="70"/>
 
                 </LinearLayout>
 
@@ -99,21 +102,23 @@
                             android:id="@+id/avatar_image_small"
                             android:layout_width="@dimen/av_small_width"
                             android:layout_height="@dimen/av_small_height"
-                            android:layout_margin="@dimen/screen_margin_default" />
+                            android:layout_margin="@dimen/screen_margin_default"
+                            app:av_border_color="#00f0ff"/>
 
                         <agency.tango.android.avatarview.views.AvatarView
                             android:id="@+id/avatar_image"
                             android:layout_width="@dimen/av_default_width"
                             android:layout_height="@dimen/av_default_height"
-                            android:layout_margin="@dimen/screen_margin_default" />
+                            android:layout_margin="@dimen/screen_margin_default"
+                            app:av_border_color="#0000ff"/>
 
                         <agency.tango.android.avatarview.views.AvatarView
                             android:id="@+id/avatar_image_biggest"
                             android:layout_width="@dimen/av_biggest_width"
                             android:layout_height="@dimen/av_biggest_height"
                             android:layout_margin="@dimen/screen_margin_default"
-                            app:av_border_color="@android:color/white"
-                            app:av_border_width="6dp" />
+                            app:av_border_color="#ffff00"
+                            app:av_border_width="6dp"/>
 
                     </LinearLayout>
 
@@ -134,7 +139,7 @@
                     android:layout_height="100dp"
                     android:layout_margin="@dimen/screen_margin_default"
                     app:av_border_color="@android:color/white"
-                    app:av_border_width="2dp" />
+                    app:av_border_width="2dp"/>
 
                 <LinearLayout
                     android:layout_width="wrap_content"

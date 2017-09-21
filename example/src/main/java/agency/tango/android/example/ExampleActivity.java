@@ -3,9 +3,11 @@ package agency.tango.android.example;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 
 import java.util.Date;
+import java.util.Timer;
 
 import agency.tango.android.avatarview.AvatarPlaceholder;
 import agency.tango.android.avatarview.IImageLoader;
@@ -30,7 +32,6 @@ public class ExampleActivity extends AppCompatActivity {
     private AvatarView avatarWithImageBiggest;
     private AvatarView refreshableAvatar;
 
-    private AvatarPlaceholder refreshableAvatarPlaceholder;
     private IImageLoader imageLoader;
 
     public ExampleActivity() {
@@ -50,8 +51,6 @@ public class ExampleActivity extends AppCompatActivity {
         avatarWithImageBiggest = (AvatarView) findViewById(R.id.avatar_image_biggest);
         refreshableAvatar = (AvatarView) findViewById(R.id.refreshable_avatar);
 
-        refreshableAvatarPlaceholder = new AvatarPlaceholder("Linda", 30);
-
         loadAvatarData();
     }
 
@@ -60,23 +59,23 @@ public class ExampleActivity extends AppCompatActivity {
         imageLoader = new PicassoLoader();
 
         imageLoader.loadImage(avatarWithNoImageSmall, (String) null, null);
-        imageLoader.loadImage(avatarWithNoImage, null, "Jakub", 33);
-        imageLoader.loadImage(avatarWithNoImageBiggest, null, "Lebron", 70);
+        imageLoader.loadImage(avatarWithNoImage, (String) null, "Jakub");
+        imageLoader.loadImage(avatarWithNoImageBiggest, (String) null, "Lebron");
         imageLoader.loadImage(avatarWithImageSmall, OBAMA_IMAGE, "Obama");
         imageLoader.loadImage(avatarWithImage, DUDA_IMAGE, "Duda");
         imageLoader.loadImage(avatarWithImageBiggest, STONOGA_IMAGE, "Stonoga");
 
-        imageLoader.loadImage(refreshableAvatar, refreshableAvatarPlaceholder, LINDA_IMAGE);
+        imageLoader.loadImage(refreshableAvatar, LINDA_IMAGE, "Linda");
     }
 
     public void reloadImage(View v) {
         imageLoader = new PicassoLoader();
-        imageLoader.loadImage(refreshableAvatar, refreshableAvatarPlaceholder, String.format("%s?%s", LINDA_IMAGE, new Date().getTime()));      //new Date() added in order to block Picasso caching
+        imageLoader.loadImage(refreshableAvatar, DUDA_IMAGE, "Duda");
     }
 
     public void reloadImageWithGlide(View v) {
         imageLoader = new GlideLoader();
-        imageLoader.loadImage(refreshableAvatar, refreshableAvatarPlaceholder, String.format("%s?%s", LINDA_IMAGE, new Date().getTime()));
+        imageLoader.loadImage(refreshableAvatar, OBAMA_IMAGE, "Obama");
     }
 
 }

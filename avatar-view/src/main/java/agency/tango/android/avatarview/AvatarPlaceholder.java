@@ -8,16 +8,18 @@ import android.graphics.PixelFormat;
 import android.graphics.RectF;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
+import android.support.annotation.ColorInt;
 import android.support.annotation.IntRange;
 import android.support.annotation.NonNull;
 
 import agency.tango.android.avatarview.utils.StringUtils;
 
 public class AvatarPlaceholder extends Drawable {
-    public static final String DEFAULT_PLACEHOLDER_STRING = "-";
     private static final String DEFAULT_PLACEHOLDER_COLOR = "#3F51B5";
     private static final String COLOR_FORMAT = "#FF%06X";
     public static final int DEFAULT_TEXT_SIZE_PERCENTAGE = 33;
+    public static final String DEFAULT_PLACEHOLDER_STRING = "-";
+    public static final int BACKGROUND_COLOR_INACTIVE = -1;
 
     private Paint textPaint;
     private Paint backgroundPaint;
@@ -26,26 +28,20 @@ public class AvatarPlaceholder extends Drawable {
     private String avatarText;
     private int textSizePercentage;
     private String defaultString;
+    private int backgroundColor;
 
     private float textStartXPoint;
     private float textStartYPoint;
 
     public AvatarPlaceholder(String name) {
-        this(name, DEFAULT_TEXT_SIZE_PERCENTAGE, DEFAULT_PLACEHOLDER_STRING);
+        this(name, DEFAULT_TEXT_SIZE_PERCENTAGE, BACKGROUND_COLOR_INACTIVE, DEFAULT_PLACEHOLDER_STRING);
     }
 
-    public AvatarPlaceholder(String name, @IntRange int textSizePercentage) {
-        this(name, textSizePercentage, DEFAULT_PLACEHOLDER_STRING);
-    }
-
-    public AvatarPlaceholder(String name, @NonNull String defaultString) {
-        this(name, DEFAULT_TEXT_SIZE_PERCENTAGE, defaultString);
-    }
-
-    public AvatarPlaceholder(String name, @IntRange int textSizePercentage, @NonNull String defaultString) {
+    public AvatarPlaceholder(String name, @IntRange int textSizePercentage, @ColorInt int backgroundColor, @NonNull String defaultString) {
         this.defaultString = resolveStringWhenNoName(defaultString);
         this.avatarText = convertNameToAvatarText(name);
         this.textSizePercentage = textSizePercentage;
+        this.backgroundColor = backgroundColor;
 
         textPaint = new Paint();
         textPaint.setAntiAlias(true);
@@ -55,10 +51,15 @@ public class AvatarPlaceholder extends Drawable {
         backgroundPaint = new Paint();
         backgroundPaint.setAntiAlias(true);
         backgroundPaint.setStyle(Paint.Style.FILL);
+
+      if (backgroundColor != BACKGROUND_COLOR_INACTIVE) {
+        backgroundPaint.setColor(backgroundColor);
+      } else {
         backgroundPaint.setColor(Color.parseColor(convertStringToColor(name)));
+      }
     }
 
-    @Override
+  @Override
     public void draw(@NonNull Canvas canvas) {
         if (placeholderBounds == null) {
             placeholderBounds = new RectF(0, 0, canvas.getWidth(), canvas.getHeight());

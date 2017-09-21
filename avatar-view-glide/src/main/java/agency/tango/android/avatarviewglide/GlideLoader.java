@@ -28,5 +28,4 @@ public class GlideLoader extends ImageLoaderBase {
                 .fitCenter()
                 .into(avatarView);
     }
-
 }

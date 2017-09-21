@@ -16,7 +16,8 @@ public class AvatarViewBindings {
     @BindingAdapter({"bind:avatarUrl", "bind:name"})
     public void loadImage(AvatarView avatarView, String avatarUrl, String name) {
         if (avatarView != null) {
-            imageLoader.loadImage(avatarView, avatarUrl, name, avatarView.textSizePercentage());
+
+            imageLoader.loadImage(avatarView, avatarUrl, name);
         }
     }
 }

@@ -4,5 +4,6 @@
         <attr name="av_border_color" format="color" />
         <attr name="av_border_width" format="dimension" />
         <attr name="av_text_size_percentage" format="integer" />
+        <attr name="av_background_color" format="color" />
     </declare-styleable>
 </resources>

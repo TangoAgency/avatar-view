@@ -10,6 +10,7 @@ import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
+import android.support.annotation.ColorInt;
 import android.support.annotation.RequiresApi;
 import android.util.AttributeSet;
 import android.widget.ImageView;
@@ -27,6 +28,9 @@ public class AvatarView extends ImageView {
     private int borderColor;
     private int borderWidth;
     private int textSizePercentage;
+
+    @ColorInt
+    private int backgroundColor;
 
     private int viewSize;
     private Drawable drawable;
@@ -84,6 +88,10 @@ public class AvatarView extends ImageView {
 
     public int textSizePercentage() {
         return textSizePercentage;
+    }
+
+    public int backgroundColor() {
+        return backgroundColor;
     }
 
     private void init(Context context, AttributeSet attrs) {
@@ -158,6 +166,7 @@ public class AvatarView extends ImageView {
         borderColor = typedArray.getColor(R.styleable.AvatarView_av_border_color, defaultBorderColor);
         borderWidth = typedArray.getDimensionPixelSize(R.styleable.AvatarView_av_border_width, defaultBorderWidth);
         textSizePercentage = typedArray.getInt(R.styleable.AvatarView_av_text_size_percentage, defaultTextSizePercentage);
+        backgroundColor = typedArray.getInt(R.styleable.AvatarView_av_background_color, AvatarPlaceholder.BACKGROUND_COLOR_INACTIVE);
     }
 
     private void saveBasicValues(Canvas canvas) {
