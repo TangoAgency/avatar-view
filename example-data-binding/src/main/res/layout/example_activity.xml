@@ -70,7 +70,8 @@
                             android:layout_height="@dimen/av_default_height"
                             android:layout_margin="@dimen/screen_margin_default"
                             bind:avatarUrl="@{viewModel.userWithNoImage.avatarUrl}"
-                            bind:name="@{viewModel.userWithNoImage.name}" />
+                            bind:name="@{viewModel.userWithNoImage.name}"
+                            bind:initialsVisible="@{viewModel.userWithNoImage.initialsVisible}" />
 
                         <agency.tango.android.avatarview.views.AvatarView
                             android:id="@+id/avatar_no_image_biggest"
@@ -81,7 +82,8 @@
                             bind:av_border_width="4dp"
                             bind:av_text_size_percentage="70"
                             bind:avatarUrl="@{viewModel.userWithNoImageBiggest.avatarUrl}"
-                            bind:name="@{viewModel.userWithNoImageBiggest.name}" />
+                            bind:name="@{viewModel.userWithNoImageBiggest.name}"
+                            bind:initialsVisible="@{viewModel.userWithNoImageBiggest.initialsVisible}" />
 
                     </LinearLayout>
 
@@ -123,7 +125,7 @@
                                 android:layout_height="@dimen/av_default_height"
                                 android:layout_margin="@dimen/screen_margin_default"
                                 bind:avatarUrl="@{viewModel.userWithImage.avatarUrl}"
-                                bind:name="@{viewModel.userWithImage.name}" />
+                                bind:name="@{viewModel.userWithImage.name}"/>
 
                             <agency.tango.android.avatarview.views.AvatarView
                                 android:id="@+id/avatar_image_biggest"

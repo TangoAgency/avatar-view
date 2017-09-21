@@ -59,8 +59,8 @@ public class ExampleActivity extends AppCompatActivity {
         imageLoader = new PicassoLoader();
 
         imageLoader.loadImage(avatarWithNoImageSmall, (String) null, null);
-        imageLoader.loadImage(avatarWithNoImage, (String) null, "Jakub");
-        imageLoader.loadImage(avatarWithNoImageBiggest, (String) null, "Lebron");
+        imageLoader.loadImage(avatarWithNoImage, null, "Jakub Stępak", true);
+        imageLoader.loadImage(avatarWithNoImageBiggest, null, "Lebron James", true);
         imageLoader.loadImage(avatarWithImageSmall, OBAMA_IMAGE, "Obama");
         imageLoader.loadImage(avatarWithImage, DUDA_IMAGE, "Duda");
         imageLoader.loadImage(avatarWithImageBiggest, STONOGA_IMAGE, "Stonoga");

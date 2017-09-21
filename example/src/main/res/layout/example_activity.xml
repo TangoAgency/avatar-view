@@ -62,7 +62,7 @@
                         app:av_border_color="#ff0000"
                         app:av_background_color="#c3ae0d"
                         app:av_border_width="4dp"
-                        app:av_text_size_percentage="70"/>
+                        app:av_text_size_percentage="35"/>
 
                     <agency.tango.android.avatarview.views.AvatarView
                         android:id="@+id/avatar_no_image_biggest"

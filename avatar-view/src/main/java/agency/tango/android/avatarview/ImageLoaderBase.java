@@ -20,4 +20,9 @@ public abstract class ImageLoaderBase implements IImageLoader {
     public void loadImage(@NonNull AvatarView avatarView, String avatarUrl, String name) {
         loadImage(avatarView, new AvatarPlaceholder(name, avatarView.textSizePercentage(), avatarView.backgroundColor(), defaultPlaceholderString), avatarUrl);
     }
+
+    @Override
+    public void loadImage(@NonNull AvatarView avatarView, String avatarUrl, String name, boolean initialsVisible) {
+        loadImage(avatarView, new AvatarPlaceholder(name, initialsVisible, avatarView.textSizePercentage(), avatarView.backgroundColor(), defaultPlaceholderString), avatarUrl);
+    }
 }

@@ -16,8 +16,14 @@ public class AvatarViewBindings {
     @BindingAdapter({"bind:avatarUrl", "bind:name"})
     public void loadImage(AvatarView avatarView, String avatarUrl, String name) {
         if (avatarView != null) {
-
             imageLoader.loadImage(avatarView, avatarUrl, name);
+        }
+    }
+
+    @BindingAdapter({"bind:avatarUrl", "bind:name", "bind:initialsVisible"})
+    public void loadImage(AvatarView avatarView, String avatarUrl, String name, boolean initialsVisible) {
+        if (avatarView != null) {
+            imageLoader.loadImage(avatarView, avatarUrl, name, initialsVisible);
         }
     }
 }

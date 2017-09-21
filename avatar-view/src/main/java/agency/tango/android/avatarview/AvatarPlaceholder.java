@@ -17,6 +17,7 @@ import agency.tango.android.avatarview.utils.StringUtils;
 public class AvatarPlaceholder extends Drawable {
     private static final String DEFAULT_PLACEHOLDER_COLOR = "#3F51B5";
     private static final String COLOR_FORMAT = "#FF%06X";
+  private static final String EMPTY_SPACE = " ";
     public static final int DEFAULT_TEXT_SIZE_PERCENTAGE = 33;
     public static final String DEFAULT_PLACEHOLDER_STRING = "-";
     public static final int BACKGROUND_COLOR_INACTIVE = -1;
@@ -38,8 +39,12 @@ public class AvatarPlaceholder extends Drawable {
     }
 
     public AvatarPlaceholder(String name, @IntRange int textSizePercentage, @ColorInt int backgroundColor, @NonNull String defaultString) {
+        this(name, false, textSizePercentage, backgroundColor, defaultString);
+    }
+
+    public AvatarPlaceholder(String name, boolean initialsVisible, @IntRange int textSizePercentage, @ColorInt int backgroundColor, @NonNull String defaultString) {
         this.defaultString = resolveStringWhenNoName(defaultString);
-        this.avatarText = convertNameToAvatarText(name);
+        this.avatarText = convertNameToAvatarText(name, initialsVisible);
         this.textSizePercentage = textSizePercentage;
         this.backgroundColor = backgroundColor;
 
@@ -106,8 +111,22 @@ public class AvatarPlaceholder extends Drawable {
         return StringUtils.isNotNullOrEmpty(stringWhenNoName) ? stringWhenNoName : DEFAULT_PLACEHOLDER_STRING;
     }
 
-    private String convertNameToAvatarText(String name) {
-        return StringUtils.isNotNullOrEmpty(name) ? name.substring(0, 1).toUpperCase() : defaultString;
+    private String convertNameToAvatarText(String name, boolean initialsVisible) {
+        if (StringUtils.isNotNullOrEmpty(name)) {
+            if (initialsVisible) {
+                String[] nameWords = name.split(EMPTY_SPACE);
+                StringBuilder stringBuilder = new StringBuilder();
+
+                for (String namePart : nameWords) {
+                    stringBuilder.append(namePart.substring(0, 1).toUpperCase());
+                }
+                return stringBuilder.toString();
+            } else {
+                return name.substring(0, 1).toUpperCase();
+            }
+        } else {
+            return defaultString;
+        }
     }
 
     private String convertStringToColor(String text) {

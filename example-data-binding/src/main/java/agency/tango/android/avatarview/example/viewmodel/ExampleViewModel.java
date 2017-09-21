@@ -24,13 +24,13 @@ public class ExampleViewModel extends BaseObservable {
     public User refreshableUser;
 
     public ExampleViewModel() {
-        userWithNoImageSmall = new User(null, null);
-        userWithNoImage = new User("Marcin", null);
-        userWithNoImageBiggest = new User("Lebron", null);
-        userWithImageSmall = new User("Obama", OBAMA_IMAGE);
-        userWithImage = new User("Duda", DUDA_IMAGE);
-        userWithImageBiggest = new User("Stonoga", STONOGA_IMAGE);
-        refreshableUser = new User("Linda", LINDA_IMAGE);
+        userWithNoImageSmall = new User(null, null, false);
+        userWithNoImage = new User("Marcin Zielinski", null, true);
+        userWithNoImageBiggest = new User("Lebron James", null, false);
+        userWithImageSmall = new User("Obama", OBAMA_IMAGE, false);
+        userWithImage = new User("Duda", DUDA_IMAGE, false);
+        userWithImageBiggest = new User("Stonoga", STONOGA_IMAGE, true);
+        refreshableUser = new User("Linda", LINDA_IMAGE, false);
     }
 
     @Bindable
