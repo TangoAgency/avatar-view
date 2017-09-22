@@ -12,6 +12,8 @@ import android.support.annotation.ColorInt;
 import android.support.annotation.IntRange;
 import android.support.annotation.NonNull;
 
+import java.util.Locale;
+
 import agency.tango.android.avatarview.utils.StringUtils;
 
 public class AvatarPlaceholder extends Drawable {
@@ -118,11 +120,11 @@ public class AvatarPlaceholder extends Drawable {
                 StringBuilder stringBuilder = new StringBuilder();
 
                 for (String namePart : nameWords) {
-                    stringBuilder.append(namePart.substring(0, 1).toUpperCase());
+                    stringBuilder.append(namePart.substring(0, 1).toUpperCase(Locale.getDefault()));
                 }
                 return stringBuilder.toString();
             } else {
-                return name.substring(0, 1).toUpperCase();
+                return name.substring(0, 1).toUpperCase(Locale.getDefault());
             }
         } else {
             return defaultString;

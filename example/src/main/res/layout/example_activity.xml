@@ -81,12 +81,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -96,7 +90,8 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                         android:layout_gravity="center">
 
                         <agency.tango.android.avatarview.views.AvatarView
                             android:id="@+id/avatar_image_small"
@@ -119,8 +114,6 @@
                             android:layout_margin="@dimen/screen_margin_default"
                             app:av_border_color="#ffff00"
                             app:av_border_width="6dp"/>
-
-                    </LinearLayout>
 
                 </LinearLayout>
 
