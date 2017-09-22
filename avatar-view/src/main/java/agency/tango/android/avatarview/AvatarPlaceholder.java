@@ -19,7 +19,7 @@ import agency.tango.android.avatarview.utils.StringUtils;
 public class AvatarPlaceholder extends Drawable {
     private static final String DEFAULT_PLACEHOLDER_COLOR = "#3F51B5";
     private static final String COLOR_FORMAT = "#FF%06X";
-  private static final String EMPTY_SPACE = " ";
+    private static final String EMPTY_SPACE = " ";
     public static final int DEFAULT_TEXT_SIZE_PERCENTAGE = 33;
     public static final String DEFAULT_PLACEHOLDER_STRING = "-";
     public static final int BACKGROUND_COLOR_INACTIVE = -1;
