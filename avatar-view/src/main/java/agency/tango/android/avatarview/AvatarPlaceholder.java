@@ -31,7 +31,6 @@ public class AvatarPlaceholder extends Drawable {
     private String avatarText;
     private int textSizePercentage;
     private String defaultString;
-    private int backgroundColor;
 
     private float textStartXPoint;
     private float textStartYPoint;
@@ -48,7 +47,6 @@ public class AvatarPlaceholder extends Drawable {
         this.defaultString = resolveStringWhenNoName(defaultString);
         this.avatarText = convertNameToAvatarText(name, initialsVisible);
         this.textSizePercentage = textSizePercentage;
-        this.backgroundColor = backgroundColor;
 
         textPaint = new Paint();
         textPaint.setAntiAlias(true);

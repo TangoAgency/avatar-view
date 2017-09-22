@@ -10,6 +10,7 @@ import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.ColorInt;
+import android.support.annotation.DimenRes;
 import android.support.v7.widget.AppCompatImageView;
 import android.util.AttributeSet;
 
@@ -26,8 +27,6 @@ public class AvatarView extends AppCompatImageView {
     private int borderColor;
     private int borderWidth;
     private int textSizePercentage;
-
-    @ColorInt
     private int backgroundColor;
 
     private int viewSize;
