@@ -9,17 +9,15 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.support.annotation.ColorInt;
-import android.support.annotation.RequiresApi;
+import android.support.v7.widget.AppCompatImageView;
 import android.util.AttributeSet;
-import android.widget.ImageView;
 
 import agency.tango.android.avatarview.AvatarPlaceholder;
 import agency.tango.android.avatarview.R;
 import timber.log.Timber;
 
-public class AvatarView extends ImageView {
+public class AvatarView extends AppCompatImageView {
 
     private int defaultBorderColor;
     private int defaultBorderWidth;
@@ -55,12 +53,6 @@ public class AvatarView extends ImageView {
 
     public AvatarView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        init(context, attrs);
-    }
-
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-    public AvatarView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        super(context, attrs, defStyleAttr, defStyleRes);
         init(context, attrs);
     }
 

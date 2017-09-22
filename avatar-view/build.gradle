@@ -29,6 +29,7 @@ dependencies {
 
     compile 'com.jakewharton.timber:timber:4.3.0'
     compile "com.android.support:support-annotations:${project.androidSupport}"
+    compile "com.android.support:appcompat-v7:${project.androidSupport}"
 }
 
 publish {
