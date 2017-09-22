@@ -21,9 +21,10 @@ public class PicassoLoader extends ImageLoaderBase {
     @Override
     public void loadImage(@NonNull AvatarView avatarView, @NonNull AvatarPlaceholder avatarPlaceholder, String avatarUrl) {
         Picasso.with(avatarView.getContext())
-                .load(avatarUrl)
-                .placeholder(avatarPlaceholder)
-                .fit()
-                .into(avatarView);
+            .load(avatarUrl)
+            .fit()
+            .centerCrop()
+            .placeholder(avatarPlaceholder)
+            .into(avatarView);
     }
 }

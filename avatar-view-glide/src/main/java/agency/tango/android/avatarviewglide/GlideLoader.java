@@ -22,11 +22,12 @@ public class GlideLoader extends ImageLoaderBase {
     @Override
     public void loadImage(@NonNull AvatarView avatarView, @NonNull AvatarPlaceholder avatarPlaceholder, @NonNull String avatarUrl) {
         Glide.with(avatarView.getContext())
-                .load(avatarUrl)
-                .crossFade()
-                .placeholder(avatarPlaceholder)
-                .fitCenter()
-                .into(avatarView);
+            .load(avatarUrl)
+            .fitCenter()
+            .centerCrop()
+            .placeholder(avatarPlaceholder)
+            .crossFade()
+            .into(avatarView);
     }
 
 }

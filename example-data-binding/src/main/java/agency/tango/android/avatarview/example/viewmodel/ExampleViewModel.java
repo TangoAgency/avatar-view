@@ -13,7 +13,7 @@ public class ExampleViewModel extends BaseObservable {
     private static final String OBAMA_IMAGE = "http://pixel.nymag.com/imgs/daily/vulture/2016/08/11/11-obama-sex-playlist.w529.h529.jpg";
     private static final String DUDA_IMAGE = "https://pbs.twimg.com/profile_images/556495456805453826/wKEOCDN0_400x400.png";
     private static final String STONOGA_IMAGE = "http://brzeg24.pl/wp-content/uploads/2015/06/Zbigniew-Stonoga-e1434539892479.jpg";
-    private static final String LINDA_IMAGE = "http://www.cyfraplus.pl/ms_galeria/fotostar/3032_c.jpg";
+    private static final String PICHAI_IMAGE = "https://business-reporter.co.uk/wp-content/uploads/2016/02/pichai-PA.jpg";
 
     public User userWithNoImageSmall;
     public User userWithNoImage;
@@ -30,7 +30,7 @@ public class ExampleViewModel extends BaseObservable {
         userWithImageSmall = new User("Obama", OBAMA_IMAGE);
         userWithImage = new User("Duda", DUDA_IMAGE);
         userWithImageBiggest = new User("Stonoga", STONOGA_IMAGE);
-        refreshableUser = new User("Linda", LINDA_IMAGE);
+        refreshableUser = new User("Pichai", PICHAI_IMAGE);
     }
 
     @Bindable
@@ -39,7 +39,7 @@ public class ExampleViewModel extends BaseObservable {
     }
 
     public void reloadImage() {
-        refreshableUser.setAvatarUrl(String.format("%s?%s", LINDA_IMAGE, new Date().getTime()));        //new Date() added in order to block Picasso caching
+        refreshableUser.setAvatarUrl(String.format("%s?%s", PICHAI_IMAGE, new Date().getTime()));        //new Date() added in order to block Picasso caching
         notifyPropertyChanged(BR.refreshableUser);
     }
 }
